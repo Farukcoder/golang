@@ -2,6 +2,17 @@ package main
 
 import "fmt"
 
+//function
+
+func displayMessage(countryName string) {
+	fmt.Printf("I love my mother land %v \n", countryName)
+}
+
+func square(number1, number2 int) {
+	result := number1 + number2
+	fmt.Println(result)
+}
+
 func main() {
 
 	/* print */
@@ -445,10 +456,81 @@ func main() {
 	//}
 
 	//break
-	for i := 1; i <= 100; i++ {
-		if i%3 == 0 {
-			break
-		}
-		fmt.Println(i)
-	}
+	//for i := 1; i <= 100; i++ {
+	//	if i%3 == 0 {
+	//		break
+	//	}
+	//	fmt.Println(i)
+	//}
+
+	//function
+	//displayMessage("Bangladesh")
+	//square(2, 2)
+
+	// pointer
+
+	//var p *int // pointer variable store another variable memory address
+	//x := 1
+	//p = &x
+	//*p -= 1
+	//fmt.Println("x:", &x)
+	//fmt.Println("x:", x)
+	//fmt.Println("p:", p)
+	//fmt.Println("p:", *p)
+
+	//x := 10
+	//chaneValue(x)
+	//fmt.Println(x)
+	//
+	//callByRef(&x)
+	//fmt.Println(x)
+
+	//structure
+	//Rahim -> id, name, age
+	//Karim -> id, name, age
+
+	//class Student{
+	//	id
+	//	name
+	//	age
+	//}
+	//
+	//rahim is a student
+
+	rahim := Student{100, "Bangladeshi", 25}
+	karim := Student{101, "Bangladeshis", 31}
+
+	rahim.increasesAge(6)
+
+	fmt.Println("Rahim Details")
+	displayInfo(rahim)
+	fmt.Println("Rahim Details")
+	displayInfo(karim)
+
 }
+
+func displayInfo(s Student) {
+	//fmt.Println(s.id)
+	//fmt.Println(s.address)
+	//fmt.Println(s.age)
+
+	fmt.Printf("Id: %v \n Address: %v \n Age: %v \n", s.id, s.address, s.age)
+}
+
+type Student struct {
+	id      int
+	address string
+	age     int
+}
+
+func (x *Student) increasesAge(val int) {
+	x.age += val
+}
+
+//func chaneValue(x int) {
+//	x = 25
+//}
+//
+//func callByRef(val *int) {
+//	*val = 25
+//}
